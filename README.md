@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+## Regelwerk
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- gespielt wird mit einem regulären 32 Karten Deck (7 bis Ass)
+- jeder Spieler erhält 3 Handkarten vor sich ausgeteilt
+- der Dealer erhält 2x 3 Handkarten vor sich ausgeteilt
+- der Dealer darf sich die ersten 3 Handkarten vor ihm anschauen und entscheiden, ob er diese spielen möchte
+- entscheidet er sich dafür, legt er die restlichen 3 verdeckten Karten offen in die Mitte aller Spieler
+- entscheidet er sich gegen die ersten 3 Karten, legt er diese stattdessen in die Mitte und muss die anderen 3 verdeckten Karten als Handkarten aufnehmen
+- die Spieler dürfen nun der Reihe nach entscheiden ob sie
+    a) eine Handkarte mit einer der Gemeinschaftskarten tauschen
+    b) alle 3 Karten austauschen oder
+    c) ihren Zug ohne Aktion beenden (auch "Schieben" genannt)
+- ab Runde 2 dürfen Spieler die Runde auch "zumachen", wodurch jeder restliche Spieler noch einen Zug durchführen darf
+- Schieben alle Spieler ihren Zug werden die Gemeinschaftskarten durch 3 neue Gemeinschaftskarten aus dem Deck ausgetauscht
+- die Runde endet, wenn
+    a) ein Spieler "zugemacht" hat und alle anderen Spieler ihren letzten Zug getätigt haben
+    b) ein Spieler 3 Asse auf der Hand hat
+    c) ein Spieler den Zahlwert 31 erreicht
+- ist die Runde beendet, werden von allen Spielern die Zahlenwerte verglichen
 
-## Available Scripts
+# Berechnung der Zahlenwert
+- jede Karte entspricht ihrem Zahlenwert (7 bis 10)
+- alle Bildkarten entsprechen einem Zahlenwert (10) - J, Q, K
+- 3 Asse zählen als Zahlenwert (11)
+- 3 sonstige Karten vom gleichen Zahlen-Nennwert zählen (30,5) - z.B. 7-7-7 oder Q-Q-Q
+- nur Zahlenwerte der gleichen Farbe fließen in die Berechnung ein
+- die maximale Punktzahl in einer Farben beträgt damit 31 (z.B. 10-K-A in Karo)
 
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Ergebnis
+- jeder Spieler hat zu Beginn 3 Leben, verliert er alle 3, dann "schwimmt" er und ist ab der nächsten Niederlage aus dem Spiel
+- verloren hat pro Runde der/die Spieler mit der niedrigsten Punktzahl
+- hat ein Spieler 3 Asse, so ist die Runde direkt vorbei und alle anderen Spieler verlieren jeweils ein Leben
+- der letzte verbleibende Spieler mit Leben oder "Schwimm"-Status gewinnt das Spiel
