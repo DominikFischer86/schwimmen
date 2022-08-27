@@ -13,9 +13,9 @@ for (const s of suits) {
 
 const TIME_BANK = 3000
 const LIVES = 4
-const MAX_Players = 3
+const MAX_Players = 8
 const players = []
-const playerArray = ["1"]
+const playerArray = ["0"]
 
 const App = () => {
   const [playerCount, setPlayerCount] = useState(0)
@@ -49,10 +49,10 @@ const App = () => {
     e.preventDefault()
     setPlayerCount(playerCount => playerCount + 1)
     players.push(player)
-    playerArray.push(playerCount.toString)
+    if (playerArray.length < MAX_Players) playerArray.push((playerCount+1).toString())
     setPlayer({ 
       ...player,
-      id: playerCount.toString,
+      id: playerCount.toString(),
       dealer: false,
       name: "",
       position: parseInt(playerCount)
@@ -79,7 +79,7 @@ const App = () => {
                 placeholder={`Input name for player ${playerCount + 1}`}
                 value={players[playerCount]?.name} />
               <button
-                disabled={playerCount >= MAX_Players || !player.name.length} 
+                disabled={playerCount >= MAX_Players || !player.name.length || id !== playerCount} 
                 onClick={addPlayer}>
                   +
               </button>
