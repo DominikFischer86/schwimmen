@@ -1,11 +1,12 @@
 import React, { useState } from "react"
+import { func } from "prop-types"
 
 import { LIVES, TIME_BANK, MAX_PLAYERS } from "../../helpers/constants"
 
 const players = []
 const playerArray = ["0"]
 
-const PlayerSelection = () => {
+const PlayerSelection = ({ setPlayers, setPhase }) => {
     const [playerCount, setPlayerCount] = useState(0)
     const [player, setPlayer] = useState({
         id: "0",
@@ -13,7 +14,8 @@ const PlayerSelection = () => {
         dealer: true,
         lives: LIVES,
         timeBank: TIME_BANK,
-        position: 0
+        position: 0,
+        cards: []
       })
 
     const onChange = e => {
@@ -43,8 +45,9 @@ const PlayerSelection = () => {
     }
 
     const initGame = () => {
-        if (players.length < 2) alert("At least 2 players are necessary to play Schwimmen")
-        console.log(players)
+        if (players.length < 2) return alert("At least 2 players are necessary to play Schwimmen")
+        setPlayers(players)
+        setPhase(1)
     }
 
     return (
@@ -74,6 +77,8 @@ const PlayerSelection = () => {
 }
 
 PlayerSelection.propTypes = {
+    setPlayers: func,
+    setPhase: func
 }
 
 export default PlayerSelection
