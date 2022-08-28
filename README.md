@@ -1,4 +1,6 @@
 # Schwimmen Kartenspiel
+Schwimmen ist ein klassisches Kartenspiel mit regulären Spielekarten. Dieses Projekt soll das Spielen lokal und online ermöglichen.
+
 ## Spielsetup
 - gespielt wird mit einem regulären 32 Karten Deck (7 bis Ass in jeweils 4 Farben)
 - jeder Spieler erhält 3 Handkarten vor sich ausgeteilt
@@ -35,3 +37,26 @@
 - verloren hat pro Runde der/die Spieler mit der niedrigsten Punktzahl (bei Punktgleichstand verlieren alle betroffenen Spieler jeweils ein Leben)
 - hat ein Spieler 3 Asse, so ist die Runde direkt vorbei und alle anderen Spieler verlieren jeweils ein Leben
 - der letzte verbleibende Spieler gewinnt das Spiel
+
+
+## Roadmap
+- **Gamelogic erstellen** (in progress)
+    1. ~~Spieler registrieren
+    2. ~~Karten mischen und an Spieler verteilen
+    3. ~~Dealer Stapel wählen lassen und Gemeinschaftskarten sowie Dealerhand festlegen
+    4. Spieleraktionen und Rundenablauf definieren (z.B. Gemeinschaftskarten austauschen bei voller Runde Schieben)
+    5. Karten tauschen
+    6. Rundenende definieren und Punktzahl auswerten (bei Erreichen von 31 Punkten oder 3 Assen auf der Hand)
+    7. Lebensanzeige anpassen
+    8. Verlierer entfernen
+    9. Game Over Screen und Rematch oder Neustart
+
+- GUI und Animationen erstellen/anpassen (für spielen auf mobile)
+- lokales Spielen ermöglichen
+    1. Intermission Screen bei nächstem Spieler am Zug
+    2. Timebank pro Spielzug
+- online Spielen ermöglichen
+    1. mit socket.io online Verbindung zwischen Geräten herstellen
+    2. Spiel-Leiter authentifizieren (Startet Session und akzeptiert Anmeldungen von Spielern)
+    3. GUI auf Onlinespiel anpassen
+- Testing
