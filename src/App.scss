@@ -1,5 +1,12 @@
 .App {
   text-align: center;
+  margin: .25rem;
+  padding: 1rem;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  background-image: url(../public//pool_table.png);
+  color: #fff;
+  min-height: calc(100vh - 3rem);
 }
 
 .App-logo {
@@ -40,4 +47,12 @@
 .cards {
   display: flex;
   flex-wrap: wrap;
+}
+
+p {
+  margin: 0;
+}
+
+h1 {
+  margin-bottom: 0;
 }

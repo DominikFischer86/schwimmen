@@ -1,0 +1,119 @@
+@keyframes swim {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.board {
+    display: flex;
+    justify-content: center;
+}
+
+.non-player-cards {
+    > div {
+        margin: 0 0 .25rem .25rem;
+    }
+}
+
+.draw-deck {
+    min-height: 140px;
+    background: rgba(0,0,0,.2);
+    position: relative;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    border-radius: 5px;
+
+    .card {
+        position: absolute;
+        bottom: 3rem;
+    }
+}
+
+.community-cards {
+    display: flex;
+    background: rgba(0,0,0,.2);
+    padding: 1rem;
+    border-radius: 5px;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+
+    > div {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        bottom: .5rem;
+    }
+}
+
+.players {
+    background: rgba(0,0,0,.2);
+    padding: 1rem;
+    border-radius: 5px;
+    
+    .player-wrapper {
+        border: 1px solid #fff;
+        padding: .25rem;
+        border-radius: 4px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: .25rem 0;
+
+        .non-card-information {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding-bottom: .5rem;
+            margin-bottom: .5rem;
+            border-bottom: 1px dashed rgba(#fff,.5);
+
+            .player-lives {
+                color: red;
+                font-size: 2.2rem;
+
+                .swim {
+                    span {
+                        display: inline-block;                       
+                        
+                        &:nth-child(1) {
+                            animation: swim 1s ease-in-out alternate infinite;
+                        }
+
+                        &:nth-child(2) {
+                            animation: swim 1s ease-in-out alternate infinite .3s;
+                        }
+
+                        &:nth-child(3) {
+                            animation: swim 1s ease-in-out alternate infinite .6s;
+                        }
+                    }
+                }
+            }
+
+            .player-name {
+                font-weight: bold;
+                text-transform: uppercase;
+                font-size: 2rem;
+            }
+
+            .player-timebank, .player-position {
+                font-size: 2rem;
+                font-weight: bold;
+            }
+        }
+
+        .player-cards {
+            display: flex;
+        }
+    }
+}

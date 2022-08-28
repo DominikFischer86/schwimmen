@@ -3,7 +3,7 @@ import { string, bool } from "prop-types"
 
 import "./Card.scss"
 
-const Card = ({ card, covered }) => {
+const Card = ({ id, card, covered }) => {
     const value = card.split(" of ")[0]
     const color = card.split(" of ")[1]
 
@@ -20,18 +20,19 @@ const Card = ({ card, covered }) => {
                 <div className={`card ${value} ${color}`}>
                     <span>{value}</span> 
                     <span className="symbol">{colorSymbol(color)}</span>
-                    <span className="upsideDown">{value}</span>
+                    <span className="upside-down">{value}</span>
                 </div>
             }
             {covered &&
-                <div className={`card covered`}></div>
+                <div style={{ transform: `translateY(${-id*1.5}px)`}} className={`card covered`}></div>
             }
         </>
     )
 }
 
 Card.propType = {
-    card: string,
+    id: string,
+    card: string.isRequired,
     covered: bool
 }
 
