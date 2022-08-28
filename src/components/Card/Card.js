@@ -24,7 +24,7 @@ const Card = ({ id, card, covered }) => {
                 </div>
             }
             {covered &&
-                <div style={{ transform: `translateY(${-id*1.5}px)`}} className={`card covered`}></div>
+                <div style={{ transform: `translateY(${-id*1.5}px)`}} className="card covered"></div>
             }
         </>
     )
