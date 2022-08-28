@@ -17,6 +17,7 @@ const App = () => {
   )
   const [players, setPlayers] = useState(mockPlayers)
   const [phase, setPhase] = useState(jumpToPhase)
+  const [positionTurn, setPositionTurn] = useState(0)
   const [communityCards, setCommunityCards] = useState([])
   let drawnCards = []
   const playersWithCards = []
@@ -24,13 +25,14 @@ const App = () => {
 
   useEffect(() => {
     if(phase === 1) dealCards()
-    if(phase === 2) dealerChooseCards()
   }, [phase])
 
   const messages = phase => {
+    if (!phase) return "Keine Phase"
     if (phase === 0) return "Mitspieler anmelden"
     if (phase === 1) return "Karten ausgeben"
     if (phase === 2) return "Dealer sucht Stapel aus"
+    if (phase === 3) return "Nächster Spieler ist am Zug"
   }
 
   const dealCards = () => {
@@ -63,11 +65,28 @@ const App = () => {
 
     setCards(cards)
     setPlayers(dealersWithCards.concat(playersWithCards))
+    setPhase(phase => phase+1)
   }
 
-  const dealerChooseCards = () => {
-    
+  const onDealerChoice = payload => {
+    const { chosenCards, communityCards, playerId } = payload
+    const { position } = players[playerId]
+    setPlayers(players => {
+      const copy = [...players]
+      copy[playerId].cards = chosenCards
+      return copy
+    })
+    setPhase(phase => phase+1)
+    setCommunityCards(communityCards)
+    turnChange()
   }
+
+  const turnChange = () => {
+    if (positionTurn >= players.length - 1) return setPositionTurn(0)
+    setPositionTurn(positionTurn => positionTurn + 1)
+  }
+
+  console.log("Phase: " + phase + " - " + messages(phase) + " auf Position: " + positionTurn)
 
   return (
     <div className="App">
@@ -75,7 +94,14 @@ const App = () => {
       <p>{messages(phase)}</p>
       <hr />
       {phase === 0 && <PlayerSelection setPlayers={setPlayers} setPhase={setPhase} />}
-      <Board players={players} cards={cards} communityCards={communityCards} phase={phase} />
+      <Board 
+          players={players} 
+          cards={cards} 
+          communityCards={communityCards} 
+          phase={phase}
+          positionTurn={positionTurn}
+          onDealerChoice={onDealerChoice}
+      />
     </div>
   );
 }
