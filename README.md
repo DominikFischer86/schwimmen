@@ -1,5 +1,5 @@
 ## Spielsetup
-- gespielt wird mit einem regulären 32 Karten Deck (7 bis Ass)
+- gespielt wird mit einem regulären 32 Karten Deck (7 bis Ass in jeweils 4 Farben)
 - jeder Spieler erhält 3 Handkarten vor sich ausgeteilt
 - der Dealer erhält 2x 3 Handkarten vor sich ausgeteilt
 
