@@ -1,8 +1,9 @@
-## Regelwerk
-
+## Spielsetup
 - gespielt wird mit einem regulären 32 Karten Deck (7 bis Ass)
 - jeder Spieler erhält 3 Handkarten vor sich ausgeteilt
 - der Dealer erhält 2x 3 Handkarten vor sich ausgeteilt
+
+## Spielablauf
 - der Dealer darf sich den ersten Stapel mit 3 Karten anschauen und entscheiden, ob er diese spielen möchte
 - entscheidet er sich dafür, legt er die restlichen 3 verdeckten Karten offen in die Mitte aller Spieler
 - entscheidet er sich gegen den ersten Stapel, legt er diese stattdessen in die Mitte und muss die anderen 3 verdeckten Karten als Handkarten aufnehmen
