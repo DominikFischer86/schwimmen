@@ -9,7 +9,7 @@
 - entscheidet er sich gegen den ersten Stapel, legt er diese stattdessen in die Mitte und muss die anderen 3 verdeckten Karten als Handkarten aufnehmen
 - die Spieler dürfen nun der Reihe nach entscheiden ob sie
     1. eine Handkarte mit einer der Gemeinschaftskarten tauschen
-    2. alle 3 Karten austauschen oder
+    2. alle 3 Handkarten durch die offenen Gemeinschaftskarten austauschen oder
     3. ihren Zug ohne Aktion beenden (auch "Schieben" genannt)
 - ab Runde 2 dürfen Spieler die Runde auch "zumachen", wodurch jeder restliche Spieler noch einen Zug durchführen darf
 - Schieben alle Spieler ihren Zug werden die Gemeinschaftskarten durch 3 neue Gemeinschaftskarten aus dem Deck ausgetauscht
