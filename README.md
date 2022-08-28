@@ -4,7 +4,7 @@
 - der Dealer erhält 2x 3 Handkarten vor sich ausgeteilt
 
 ## Spielablauf
-- der Dealer darf sich den ersten Stapel mit 3 Karten anschauen und entscheiden, ob er diese spielen möchte
+- der Dealer darf sich den ersten Stapel mit 3 Karten anschauen und entscheiden, ob er diese spielen möchte, ohne den zweiten Stapel zu sichten
 - entscheidet er sich dafür, legt er die restlichen 3 verdeckten Karten offen in die Mitte aller Spieler
 - entscheidet er sich gegen den ersten Stapel, legt er diese stattdessen in die Mitte und muss die anderen 3 verdeckten Karten als Handkarten aufnehmen
 - die Spieler dürfen nun der Reihe nach entscheiden ob sie
