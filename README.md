@@ -1,9 +1,9 @@
-## Spielsetup
+# Spielsetup
 - gespielt wird mit einem regulären 32 Karten Deck (7 bis Ass in jeweils 4 Farben)
 - jeder Spieler erhält 3 Handkarten vor sich ausgeteilt
 - der Dealer erhält 2x 3 Handkarten vor sich ausgeteilt
 
-## Spielablauf
+# Spielablauf
 - der Dealer darf sich den ersten Stapel mit 3 Karten anschauen und entscheiden, ob er diese spielen möchte, ohne den zweiten Stapel zu sichten
 - entscheidet er sich dafür, legt er die restlichen 3 verdeckten Karten offen in die Mitte aller Spieler
 - entscheidet er sich gegen den ersten Stapel, legt er diese stattdessen in die Mitte und muss die anderen 3 verdeckten Karten als Handkarten aufnehmen
@@ -19,7 +19,7 @@
     3. ein Spieler den Zahlwert 31 erreicht
 - ist die Runde beendet, werden von allen Spielern die Zahlenwerte verglichen
 
-# Berechnung der Zahlenwerte
+## Berechnung der Zahlenwerte
 - jede Nummernkarte entspricht ihrem Zahlenwert, (7) bis (10) Punkte
 - alle Bildkarten (J, Q, K) entsprechen jeweils (10) Punkte
 - Asse sind (11) Punkte wert
@@ -29,7 +29,7 @@
 - die maximale Punktzahl in einer Farbe beträgt damit (31) - z.B. 10♦ - K♦ - A♦
 - die niedrigste Punktzahl ist somit (8), z.B. 7♦ - 7♣ - 8♠
 
-# Ergebnis
+## Ergebnis
 - jeder Spieler hat zu Beginn 3 Leben, verliert er alle 3, dann "schwimmt" er und ist ab der nächsten Niederlage aus dem Spiel
 - verloren hat pro Runde der/die Spieler mit der niedrigsten Punktzahl (bei Punktgleichstand verlieren alle betroffenen Spieler jeweils ein Leben)
 - hat ein Spieler 3 Asse, so ist die Runde direkt vorbei und alle anderen Spieler verlieren jeweils ein Leben
