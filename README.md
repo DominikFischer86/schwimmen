@@ -3,9 +3,9 @@
 - gespielt wird mit einem regulären 32 Karten Deck (7 bis Ass)
 - jeder Spieler erhält 3 Handkarten vor sich ausgeteilt
 - der Dealer erhält 2x 3 Handkarten vor sich ausgeteilt
-- der Dealer darf sich die ersten 3 Handkarten vor ihm anschauen und entscheiden, ob er diese spielen möchte
+- der Dealer darf sich den ersten Stapel mit 3 Karten anschauen und entscheiden, ob er diese spielen möchte
 - entscheidet er sich dafür, legt er die restlichen 3 verdeckten Karten offen in die Mitte aller Spieler
-- entscheidet er sich gegen die ersten 3 Karten, legt er diese stattdessen in die Mitte und muss die anderen 3 verdeckten Karten als Handkarten aufnehmen
+- entscheidet er sich gegen den ersten Stapel, legt er diese stattdessen in die Mitte und muss die anderen 3 verdeckten Karten als Handkarten aufnehmen
 - die Spieler dürfen nun der Reihe nach entscheiden ob sie
     a) eine Handkarte mit einer der Gemeinschaftskarten tauschen
     b) alle 3 Karten austauschen oder
