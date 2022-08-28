@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 
 import PlayerSelection from "./components/PlayerSelection"
-import Card from "./components/Card"
+import Board from "./components/Board"
 
 import { mockPlayers } from "./helpers/mockPlayers"
 import { getInitCards } from "./helpers/helperFunctions"
@@ -9,25 +9,28 @@ import { getInitCards } from "./helpers/helperFunctions"
 import "./App.scss"
 
 const initCards = getInitCards()
+const jumpToPhase = 1
 
 const App = () => {
   const [cards, setCards] = useState(
     [...initCards].sort(() => Math.random() - 0.5)
   )
   const [players, setPlayers] = useState(mockPlayers)
-  const [phase, setPhase] = useState(1)
-  const [communityCards, setCommunityCards] = []
+  const [phase, setPhase] = useState(jumpToPhase)
+  const [communityCards, setCommunityCards] = useState([])
   let drawnCards = []
   const playersWithCards = []
   const dealersWithCards = []
 
   useEffect(() => {
-    if(phase === 1) return dealCards()
+    if(phase === 1) dealCards()
+    if(phase === 2) dealerChooseCards()
   }, [phase])
 
   const messages = phase => {
     if (phase === 0) return "Mitspieler anmelden"
     if (phase === 1) return "Karten ausgeben"
+    if (phase === 2) return "Dealer sucht Stapel aus"
   }
 
   const dealCards = () => {
@@ -42,28 +45,29 @@ const App = () => {
       numberOfCardsRegular.map(_ => {
         const getLastCard = cards.pop()
         drawnCards.push(getLastCard)
-        playerWithCards = {...players[player.id], cards: drawnCards}
+        return playerWithCards = {...players[player.id], cards: drawnCards}
       })
       drawnCards = []
-      playersWithCards.push(playerWithCards)
+      return playersWithCards.push(playerWithCards)
     })
 
     playerWhoIsDealer.map(player => {
       numberOfCardsDealer.map(_ => {
         const getLastCard = cards.pop()
         drawnCards.push(getLastCard)
-        dealerWithCards = {...players[player.id], cards: drawnCards}
+        return dealerWithCards = {...players[player.id], cards: drawnCards}
       })
       drawnCards = []
-      dealersWithCards.push(dealerWithCards)
+      return dealersWithCards.push(dealerWithCards)
     })
 
     setCards(cards)
     setPlayers(dealersWithCards.concat(playersWithCards))
   }
 
-  console.log(cards)
-  console.log(players)
+  const dealerChooseCards = () => {
+    
+  }
 
   return (
     <div className="App">
@@ -71,15 +75,7 @@ const App = () => {
       <p>{messages(phase)}</p>
       <hr />
       {phase === 0 && <PlayerSelection setPlayers={setPlayers} setPhase={setPhase} />}
-      {phase === 1 && 
-      (<div>
-         <div className="cards">
-          {cards.map(card => (
-            <Card card={card} key={card} />
-          ))}
-        </div>
-      </div>
-      )}
+      <Board players={players} cards={cards} communityCards={communityCards} phase={phase} />
     </div>
   );
 }
