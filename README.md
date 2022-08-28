@@ -7,15 +7,15 @@
 - entscheidet er sich dafür, legt er die restlichen 3 verdeckten Karten offen in die Mitte aller Spieler
 - entscheidet er sich gegen den ersten Stapel, legt er diese stattdessen in die Mitte und muss die anderen 3 verdeckten Karten als Handkarten aufnehmen
 - die Spieler dürfen nun der Reihe nach entscheiden ob sie
-    a) eine Handkarte mit einer der Gemeinschaftskarten tauschen
-    b) alle 3 Karten austauschen oder
-    c) ihren Zug ohne Aktion beenden (auch "Schieben" genannt)
+    1. eine Handkarte mit einer der Gemeinschaftskarten tauschen
+    2. alle 3 Karten austauschen oder
+    3. ihren Zug ohne Aktion beenden (auch "Schieben" genannt)
 - ab Runde 2 dürfen Spieler die Runde auch "zumachen", wodurch jeder restliche Spieler noch einen Zug durchführen darf
 - Schieben alle Spieler ihren Zug werden die Gemeinschaftskarten durch 3 neue Gemeinschaftskarten aus dem Deck ausgetauscht
 - die Runde endet, wenn
-    a) ein Spieler "zugemacht" hat und alle anderen Spieler ihren letzten Zug getätigt haben
-    b) ein Spieler 3 Asse auf der Hand hat
-    c) ein Spieler den Zahlwert 31 erreicht
+    1. ein Spieler "zugemacht" hat und alle anderen Spieler ihren letzten Zug getätigt haben
+    2. ein Spieler 3 Asse auf der Hand hat
+    3. ein Spieler den Zahlwert 31 erreicht
 - ist die Runde beendet, werden von allen Spielern die Zahlenwerte verglichen
 
 # Berechnung der Zahlenwert
