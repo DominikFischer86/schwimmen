@@ -19,16 +19,18 @@
     3. ein Spieler den Zahlwert 31 erreicht
 - ist die Runde beendet, werden von allen Spielern die Zahlenwerte verglichen
 
-# Berechnung der Zahlenwert
-- jede Karte entspricht ihrem Zahlenwert (7 bis 10)
-- alle Bildkarten entsprechen einem Zahlenwert (10) - J, Q, K
-- 3 Asse zählen als Zahlenwert (11)
+# Berechnung der Zahlenwerte
+- jede Nummernkarte entspricht ihrem Zahlenwert, (7) bis (10) Punkte
+- alle Bildkarten (J, Q, K) entsprechen jeweils (10) Punkte
+- Asse sind (11) Punkte wert
+- 3 Asse in der Hand gewinnen das Spiel auf der Stelle
 - 3 sonstige Karten vom gleichen Zahlen-Nennwert zählen (30,5) - z.B. 7-7-7 oder Q-Q-Q
-- nur Zahlenwerte der gleichen Farbe fließen in die Berechnung ein
-- die maximale Punktzahl in einer Farben beträgt damit 31 (z.B. 10-K-A in Karo)
+- nur Zahlenwerte der **gleichen Farbe** fließen in die Berechnung ein
+- die maximale Punktzahl in einer Farbe beträgt damit (31) - z.B. 10♦ - K♦ - A♦
+- die niedrigste Punktzahl ist somit (8), z.B. 7♦ - 7♣ - 8♠
 
 # Ergebnis
 - jeder Spieler hat zu Beginn 3 Leben, verliert er alle 3, dann "schwimmt" er und ist ab der nächsten Niederlage aus dem Spiel
-- verloren hat pro Runde der/die Spieler mit der niedrigsten Punktzahl
+- verloren hat pro Runde der/die Spieler mit der niedrigsten Punktzahl (bei Punktgleichstand verlieren alle betroffenen Spieler jeweils ein Leben)
 - hat ein Spieler 3 Asse, so ist die Runde direkt vorbei und alle anderen Spieler verlieren jeweils ein Leben
-- der letzte verbleibende Spieler mit Leben oder "Schwimm"-Status gewinnt das Spiel
+- der letzte verbleibende Spieler gewinnt das Spiel
