@@ -56,7 +56,8 @@ Schwimmen ist ein klassisches Kartenspiel mit regulären Spielekarten. Dieses Pr
     1. Intermission Screen bei nächstem Spieler am Zug
     2. Timebank pro Spielzug
 - online Spielen ermöglichen
-    1. mit socket.io online Verbindung zwischen Geräten herstellen
-    2. Spiel-Leiter authentifizieren (Startet Session und akzeptiert Anmeldungen von Spielern)
-    3. GUI auf Onlinespiel anpassen
+    1. SplashScreen mit GameMode Auswahl
+    2. mit socket.io online Verbindung zwischen Geräten herstellen
+    3. Spiel-Leiter authentifizieren (Startet Session und akzeptiert Anmeldungen von Spielern)
+    4. GUI auf Onlinespiel anpassen
 - Testing
