@@ -41,9 +41,9 @@ Schwimmen ist ein klassisches Kartenspiel mit regulären Spielekarten. Dieses Pr
 
 ## Roadmap
 - **Gamelogic erstellen** (in progress)
-    1. ~~Spieler registrieren
-    2. ~~Karten mischen und an Spieler verteilen
-    3. ~~Dealer Stapel wählen lassen und Gemeinschaftskarten sowie Dealerhand festlegen
+    1. ~~Spieler registrieren~~
+    2. ~~Karten mischen und an Spieler verteilen~~
+    3. ~~Dealer Stapel wählen lassen und Gemeinschaftskarten sowie Dealerhand festlegen~~
     4. Spieleraktionen und Rundenablauf definieren (z.B. Gemeinschaftskarten austauschen bei voller Runde Schieben)
     5. Karten tauschen
     6. Rundenende definieren und Punktzahl auswerten (bei Erreichen von 31 Punkten oder 3 Assen auf der Hand)
