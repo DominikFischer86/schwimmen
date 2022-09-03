@@ -27,12 +27,12 @@ const App = () => {
     if(phase === 1) dealCards()
   }, [phase])
 
-  const messages = phase => {
+  const messages = (phase, positionTurn) => {
     if (!phase) return "Keine Phase"
     if (phase === 0) return "Mitspieler anmelden"
     if (phase === 1) return "Karten ausgeben"
     if (phase === 2) return "Dealer sucht Stapel aus"
-    if (phase === 3) return "Nächster Spieler ist am Zug"
+    if (phase === 3) return `${players.find(player => player.position === positionTurn)?.name} ist am Zug`
   }
 
   const dealCards = () => {
@@ -86,22 +86,25 @@ const App = () => {
     setPositionTurn(positionTurn => positionTurn + 1)
   }
 
-  console.log("Phase: " + phase + " - " + messages(phase) + " auf Position: " + positionTurn)
+  console.log("Phase: " + phase + " - " + messages(phase, positionTurn) + " auf Position: " + positionTurn)
 
   return (
     <div className="App">
       <h1>Schwimmen</h1>
-      <p>{messages(phase)}</p>
+      <p>{messages(phase, positionTurn)}</p>
       <hr />
       {phase === 0 && <PlayerSelection setPlayers={setPlayers} setPhase={setPhase} />}
-      <Board 
+      {phase > 0 &&
+        <Board 
           players={players} 
           cards={cards} 
           communityCards={communityCards} 
           phase={phase}
           positionTurn={positionTurn}
           onDealerChoice={onDealerChoice}
-      />
+        />
+      }
+      {/* <button onClick={turnChange}>Next Turn</button> */}
     </div>
   );
 }
