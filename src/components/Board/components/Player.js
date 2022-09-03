@@ -11,7 +11,7 @@ const Player = ({ player, positionTurn, phase, onDealerChoice, displayCards }) =
 
     return (
         <div className="player-wrapper">
-            <div className="non-card-information">
+            <div className={`non-card-information ${displayCards ? "show-border" : ""}`}>
                 <div className="player-name">
                     #{position+1} {name} {dealer && <span>(D)</span>}
                 </div>
