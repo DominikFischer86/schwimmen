@@ -9,13 +9,25 @@ import "./Board.scss"
 const Board = ({ players, cards, communityCards, phase, positionTurn, onDealerChoice }) => {
     const playersMinusDealer = players.filter(player => !player.dealer)
     const playerWhoIsDealer = players.filter(player => player.dealer)
+    const playerWhoseTurnItIs = players.filter(player => player.position === positionTurn)
+    const playersWhosteTurnItIsNot = players.filter(player => player.position !== positionTurn)
     const undefinedCommunityCards = ['', '', '']
 
+    const sortPlayersWhosteTurnItIsNot = () => {
+        const playersToConcat = playersWhosteTurnItIsNot.slice(0, positionTurn)
+        const playersToConcatAt = playersWhosteTurnItIsNot.splice(positionTurn, playersWhosteTurnItIsNot.length)
+        return playersToConcatAt.concat(playersToConcat)
+    }
+ 
     return (
         <div className="board">
             <div className="players">
-                {playersMinusDealer.map(player => <Player positionTurn={positionTurn} player={player} key={player.id} />)}
-                
+            {phase === 2 && 
+                playersMinusDealer.map(player => <Player positionTurn={positionTurn} player={player} key={player.id} />)
+            }
+            {phase > 2 && 
+                sortPlayersWhosteTurnItIsNot().map(player => <Player positionTurn={positionTurn} player={player} key={player.id} />)
+            }    
             </div>
 
             <div className="draw-deck">
@@ -38,7 +50,7 @@ const Board = ({ players, cards, communityCards, phase, positionTurn, onDealerCh
             </div>
 
             {phase === 2 && 
-                <div className="dealer players">
+                <div className="active-player-area dealer players">
                     <p>Wähle einen der Stapel.</p>
                     {playerWhoIsDealer.map(player => 
                         <Player 
@@ -46,11 +58,29 @@ const Board = ({ players, cards, communityCards, phase, positionTurn, onDealerCh
                             positionTurn={positionTurn} 
                             player={player} 
                             key={player.id}
-                            onDealerChoice={onDealerChoice} 
-                        />)}
+                            onDealerChoice={onDealerChoice}
+                            displayerCards
+                        />
+                        )
+                    }
                 </div>
             }
-            <div className="active-player"></div>
+            {phase > 2 &&
+                <div className="active-player players active-player-area">
+                <p>Tausche eine oder drei Karten, oder schiebe.</p>
+                        {playerWhoseTurnItIs.map(player => 
+                            <Player 
+                                phase={phase} 
+                                positionTurn={positionTurn} 
+                                player={player} 
+                                key={player.id}
+                                onDealerChoice={onDealerChoice}
+                                displayCards
+                            />
+                            )
+                        }
+                </div>
+            }
         </div>
     )
 }

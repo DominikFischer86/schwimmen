@@ -1,11 +1,11 @@
 import React from "react"
-import { object, number, func } from "prop-types"
+import { object, number, func, bool } from "prop-types"
 
 import Card from "../../Card"
 import PlayerLives from "./PlayerLives"
 import DealerChoosePile from "./DealerChoosePile"
 
-const Player = ({ player, positionTurn, phase, onDealerChoice }) => {
+const Player = ({ player, positionTurn, phase, onDealerChoice, displayCards }) => {
     const { name, position, cards, lives, timeBank, dealer, id } = player
     const isPlayersTurn = position === positionTurn
 
@@ -21,7 +21,7 @@ const Player = ({ player, positionTurn, phase, onDealerChoice }) => {
             {phase === 2 &&
                 <DealerChoosePile onDealerChoice={onDealerChoice} cards={cards} playerId={id} />
             }
-            {phase !== 2 &&
+            {phase !== 2 && displayCards &&
                 <div className="player-cards">
                     {cards.map(card => <Card covered={!isPlayersTurn} card={card} key={card} />)}
                 </div>
@@ -34,7 +34,8 @@ Player.propTypes = {
     player: object,
     positionTurn: number,
     phase: number,
-    onDealerChoice: func
+    onDealerChoice: func,
+    displayCards: bool
 }
 
 export default Player
