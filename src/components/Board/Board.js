@@ -21,34 +21,6 @@ const Board = ({ players, cards, communityCards, phase, positionTurn, onDealerCh
  
     return (
         <div className="board">
-            <div className="players">
-            {phase === 2 && 
-                playersMinusDealer.map(player => <Player positionTurn={positionTurn} player={player} key={player.id} />)
-            }
-            {phase > 2 && 
-                sortPlayersWhosteTurnItIsNot().map(player => <Player positionTurn={positionTurn} player={player} key={player.id} />)
-            }    
-            </div>
-
-            <div className="draw-deck">
-                <p>Nachziehstapel</p>
-                {cards.map((card, id) => (<Card id={id} covered card={card} key={card} />))}
-            </div>
-
-            <div className="community-cards">
-                <p>Gemeinschaftskarten</p>
-                <div>
-                    {!communityCards.length && undefinedCommunityCards.map((card, id) => (
-                            <Card card={card} key={id} />
-                        ))   
-                    }
-                    {communityCards.length > 0 && communityCards.map(card => (
-                            <Card card={card} key={card} />
-                        ))   
-                    }
-                </div>
-            </div>
-
             {phase === 2 && 
                 <div className="active-player-area dealer players">
                     <p>Wähle einen der Stapel.</p>
@@ -66,7 +38,7 @@ const Board = ({ players, cards, communityCards, phase, positionTurn, onDealerCh
                 </div>
             }
             {phase > 2 &&
-                <div className="active-player players active-player-area">
+                <div className="active-player-area active-player players">
                 <p>Tausche eine oder drei Karten, oder schiebe.</p>
                         {playerWhoseTurnItIs.map(player => 
                             <Player 
@@ -81,6 +53,34 @@ const Board = ({ players, cards, communityCards, phase, positionTurn, onDealerCh
                         }
                 </div>
             }
+
+            <div className="community-cards">
+                <p>Gemeinschaftskarten</p>
+                <div>
+                    {!communityCards.length && undefinedCommunityCards.map((card, id) => (
+                            <Card card={card} key={id} />
+                        ))   
+                    }
+                    {communityCards.length > 0 && communityCards.map(card => (
+                            <Card card={card} key={card} />
+                        ))   
+                    }
+                </div>
+            </div>
+
+            <div className="players inactive-players-area">
+            {phase === 2 && 
+                playersMinusDealer.map(player => <Player positionTurn={positionTurn} player={player} key={player.id} />)
+            }
+            {phase > 2 && 
+                sortPlayersWhosteTurnItIsNot().map(player => <Player positionTurn={positionTurn} player={player} key={player.id} />)
+            }    
+            </div>
+
+            <div className="draw-deck">
+                <p>Nachziehstapel</p>
+                {cards.map((card, id) => (<Card id={id} covered card={card} key={card} />))}
+            </div>
         </div>
     )
 }
