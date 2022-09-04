@@ -22,8 +22,8 @@ const DealerChoosePile = ({ onDealerChoice, cards, playerId }) => {
                 {pileOne.map(card => <Card card={card} key={card} />)}
             </div>
             <div className="dealer-choice-buttons">
-                <button name="pileOne" onClick={() => choosePile({ picked: pileOne, abandoned: pileTwo })}>☚</button>
-                <button name="pileTwo" onClick={() => choosePile({ picked: pileTwo, abandoned: pileOne })}>☛</button>
+                <button name="pileOne" onClick={() => choosePile({ picked: pileOne, abandoned: pileTwo })}>☝️</button>
+                <button name="pileTwo" onClick={() => choosePile({ picked: pileTwo, abandoned: pileOne })}>👇</button>
             </div>
             <div className="player-cards right-pile">
                 {pileTwo.map(card => <Card covered card={card} key={card} />)}
