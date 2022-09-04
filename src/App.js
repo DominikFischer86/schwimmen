@@ -70,7 +70,7 @@ const App = () => {
 
   const onDealerChoice = payload => {
     const { chosenCards, communityCards, playerId } = payload
-    const { position } = players[playerId]
+
     setPlayers(players => {
       const copy = [...players]
       copy[playerId].cards = chosenCards
